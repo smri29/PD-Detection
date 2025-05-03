@@ -1,0 +1,45 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Python egg files
+*.egg
+*.egg-info/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.whl
+
+# Pytest cache
+.cache/
+
+# VS Code settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# Other IDEs
+*.sublime-project
+*.sublime-workspace

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parkinson Disease Detection</title>
+</head>
+<body>
+    <h1>Parkinson Disease Detection</h1>
+    <form id="prediction-form">
+        <label for="features">Enter features (comma-separated):</label>
+        <input type="text" id="features" name="features" required>
+        <button type="submit">Predict</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('prediction-form').onsubmit = async function(event) {
+            event.preventDefault();
+            const features = document.getElementById('features').value.split(',').map(Number);
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ features: features })
+            });
+            const result = await response.json();
+            document.getElementById('result').innerText = 'Prediction: ' + result.prediction;
+        };
+    </script>
+</body>
+</html>
